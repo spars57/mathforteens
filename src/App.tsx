@@ -1,5 +1,48 @@
+import { Box, Fade, Typography } from "@mui/material";
+
 function App() {
-  return <>Math for Teens - Website</>;
+  return (
+    <Fade in={true} timeout={1000}>
+      <Box
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        justifyContent="center"
+        height="100vh"
+        px={{ xs: 4, md: 4 }}
+      >
+        <Typography
+          variant="h3"
+          sx={{
+            transition: "all 1s ease",
+            fontSize: { sm: 36, md: 48 },
+          }}
+        >
+          Math for Teens
+        </Typography>
+        <Typography
+          variant="h6"
+          textAlign="center"
+          sx={{
+            transition: "all 1s ease",
+            fontSize: { sm: 16, md: 24 },
+          }}
+        >
+          Disponivel em breve...
+        </Typography>
+        <Typography
+          variant="caption"
+          textAlign="center"
+          sx={{
+            transition: "all 1s ease",
+            fontSize: { sm: 12, md: 16 },
+          }}
+        >
+          Copyright © 2025 Math for Teens. Todos os direitos reservados.
+        </Typography>
+      </Box>
+    </Fade>
+  );
 }
 
 export default App;
