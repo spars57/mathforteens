@@ -54,7 +54,7 @@ function App() {
             fontSize: { sm: 12, md: 16 },
           }}
         >
-          Copyright © 2025 Math for Teens. Todos os direitos reservados.
+          Copyright © 2025 Math For Teens. Todos os direitos reservados.
         </Typography>
       </Box>
     </Fade>
