@@ -10,9 +10,10 @@ function App() {
         justifyContent="center"
         height="100vh"
         px={{ xs: 4, md: 4 }}
+        gap={1}
       >
         <Typography
-          variant="h3"
+          variant="h4"
           sx={{
             transition: "all 1s ease",
             fontSize: { sm: 36, md: 48 },
@@ -20,6 +21,20 @@ function App() {
         >
           Math for Teens
         </Typography>
+        <Box
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          width={"24%"}
+        >
+          <img
+            src="/logo.webp"
+            alt="Math for Teens"
+            width={"100%"}
+            style={{ border: "1px solid grey", borderRadius: 12 }}
+          />
+        </Box>
+
         <Typography
           variant="h6"
           textAlign="center"
