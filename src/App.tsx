@@ -19,7 +19,7 @@ function App() {
             fontSize: { sm: 36, md: 48 },
           }}
         >
-          Math for Teens
+          Math For Teens
         </Typography>
         <Box
           display="flex"
@@ -49,6 +49,7 @@ function App() {
           variant="caption"
           textAlign="center"
           sx={{
+            fontWeight: 100,
             transition: "all 1s ease",
             fontSize: { sm: 12, md: 16 },
           }}
