@@ -1,32 +1,66 @@
 {
-  "name": "vite",
-  "private": true,
-  "version": "0.0.0",
+  "name": "with-vercel-mongodb",
+  "version": "1.0.0",
+  "description": "A blank template to get started with Payload 3.0",
+  "license": "MIT",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "build": "cross-env NODE_OPTIONS=--no-deprecation next build",
+    "dev": "cross-env NODE_OPTIONS=--no-deprecation next dev",
+    "devsafe": "rm -rf .next && cross-env NODE_OPTIONS=--no-deprecation next dev",
+    "generate:importmap": "cross-env NODE_OPTIONS=--no-deprecation payload generate:importmap",
+    "generate:types": "cross-env NODE_OPTIONS=--no-deprecation payload generate:types",
+    "lint": "cross-env NODE_OPTIONS=--no-deprecation next lint",
+    "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
+    "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
+    "test": "pnpm run test:int && pnpm run test:e2e",
+    "test:e2e": "cross-env NODE_OPTIONS=\"--no-deprecation --no-experimental-strip-types\" pnpm exec playwright test",
+    "test:int": "cross-env NODE_OPTIONS=--no-deprecation vitest run --config ./vitest.config.mts",
+    "docker:dev": "docker-compose up",
+    "docker:build": "docker-compose build",
+    "docker:down": "docker-compose down"
   },
   "dependencies": {
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0",
-    "@mui/material": "^7.0.2",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "@payloadcms/db-mongodb": "3.44.0",
+    "@payloadcms/next": "3.44.0",
+    "@payloadcms/payload-cloud": "3.44.0",
+    "@payloadcms/richtext-lexical": "3.44.0",
+    "@payloadcms/ui": "3.44.0",
+    "cross-env": "^7.0.3",
+    "graphql": "^16.8.1",
+    "next": "15.3.0",
+    "payload": "3.44.0",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "@payloadcms/storage-vercel-blob": "3.44.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.22.0",
-    "@types/react": "^19.0.10",
-    "@types/react-dom": "^19.0.4",
-    "@vitejs/plugin-react": "^4.3.4",
-    "eslint": "^9.22.0",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.19",
-    "globals": "^16.0.0",
-    "typescript": "~5.7.2",
-    "typescript-eslint": "^8.26.1",
-    "vite": "^6.3.1"
-  }
+    "@eslint/eslintrc": "^3.2.0",
+    "@playwright/test": "1.50.0",
+    "@testing-library/react": "16.3.0",
+    "@types/node": "^22.5.4",
+    "@types/react": "19.1.0",
+    "@types/react-dom": "19.1.2",
+    "@vitejs/plugin-react": "4.5.2",
+    "eslint": "^9.16.0",
+    "eslint-config-next": "15.3.0",
+    "jsdom": "26.1.0",
+    "playwright": "1.50.0",
+    "playwright-core": "1.50.0",
+    "prettier": "^3.4.2",
+    "typescript": "5.7.3",
+    "vite-tsconfig-paths": "5.1.4",
+    "vitest": "3.2.3"
+  },
+  "engines": {
+    "node": "^18.20.2 || >=20.9.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "sharp",
+      "esbuild",
+      "unrs-resolver"
+    ]
+  },
+  "packageManager": "pnpm@10.12.4"
 }
